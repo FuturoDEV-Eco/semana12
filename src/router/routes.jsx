@@ -6,7 +6,6 @@ import Home from "../pages/Home.jsx"
 import Cadastro from "../pages/Cadastro.jsx"
 import Lista from "../pages/Lista.jsx"
 import Login from "../pages/Login.jsx"
-import DashboardPage from "../pages/DashboardPage.jsx"
 
 const routers = createBrowserRouter([
   {
@@ -29,10 +28,6 @@ const routers = createBrowserRouter([
       {
         path: "/lista-trilhas",
         element: <Lista />,
-      },
-      {
-        path: "/dash",
-        element: <DashboardPage />,
       }
     ]
   }
