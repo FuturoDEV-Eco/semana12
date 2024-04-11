@@ -1,37 +1,49 @@
 /**
- * PASSO A PASSO PARA CRIAR UM CONTEXTO
+ * PASSOS PARA CRIAR UM CONTEXTO
  * 
- * 1 - [X] - CRIE O ARQUIVO DO CONTEXTO NA PASTA CONTEXT
- * 2 - [x] - IMPORTAR O createContext DO REACT (ele serve para criar o contexto)
- * 3 - [x] - CRIAR O CONTEXTO USANDO A FUNÇÃO createContext
- * 4 - [x] - EXPORTAR A VARIÁVEL DO CONTEXTO
+ * 1 - [x] - IMPORTE O createContext DO REACT
+ * 2 - [x] - CRIAR A VARIÁVEL DO CONTEXTO
+ * 3 - [x] - EXPORTAR A VARIÁVEL DO CONTEXTO
  * 
- * 5 - [x] - CRIE O PROVIDER
+ * 4 - [x] - CRIE E EXPORTE A VARIÁVEL DO PROVIDER
+ * 5 - [x] - RECEBA A PROP CHILDREN
  * 6 - [x] - DEFINA OS DADOS GLOBAIS
- * 7 - [x] - CRIE O RETURN DO PROVIDER PASSANDO OS DADOS GLOBAIS DENTRO
- * DA PROPS 'VALUE'
- * 8 - [x] - EXPORTE O PROVIDER
+ * 7 - [x] - CRIE O JSX DO PROVIDER E PASSE OS DADOS GLOBAIS NA PROP value
+ * 8 - [x] - IMPORTE O PROVIDER NO ARQUIVO APP.JSX
+ * 
+ * 9 - [x] - IMPORTE O CONTEXTO NO ARQUIVO QUE FOR UTILIZAR
+ * 10 - [] - IMPORTE O useContext DO REACT
+ * 11 - [] - RECEBA OS DADOS GLOBAIS USANDO O useContext
  */
 
 import {createContext, useState} from "react"
 
 export const UsuariosContext = createContext()
 
+// provider
 export const UsuariosContextProvider = ({children}) => {
-  // DADOS GLOBAIS
   const [usuarios, setUsuarios] = useState([
     {
       nome: "Bruno",
-      email: "bruno@email.com"
+      email: "email@email.com"
+    },
+    {
+      nome: "Renata",
+      email: "email@email.com"
+    },
+    {
+      nome: "Lucas",
+      email: "email@email.com"
     }
   ])
 
+  function DizerOla(){
+    alert("Ola")
+  }
+
   return (
-    // aqui é o nome do contexto
-    <UsuariosContext.Provider value={{usuarios, setUsuarios}}>
-      {/* // aqui dentro */}
+    <UsuariosContext.Provider value={{usuarios, setUsuarios, DizerOla}}>
       {children}
     </UsuariosContext.Provider>
   )
 }
-
