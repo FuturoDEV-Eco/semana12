@@ -1,17 +1,17 @@
 import { Link } from "react-router-dom";
-import { Button } from "@mui/material";
+import CButton from "./atoms/CButton/CButton";
 
 function Navbar() {
   return (
     <nav>
       <Link to="/">
-        <Button variant="contained">Home</Button>
+        <CButton>Home</CButton>
       </Link>
       <Link to="/cadastro">
-        <Button variant="contained">Cadastro</Button>
+        <CButton>Cadastro</CButton>
       </Link>
       <Link to="/lista-trilhas">
-        <Button variant="contained">Lista</Button>
+        <CButton>Lista</CButton>
       </Link>
     </nav>
   );
